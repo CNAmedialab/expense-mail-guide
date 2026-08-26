@@ -69,13 +69,15 @@
     -webkit-text-size-adjust: 100%;
   }
   .wrap {
-    max-width: 48rem;
+    max-width: 82rem;
     margin: 0 auto;
     padding: 2.5rem 1.5rem 4rem;
     display: flex;
     flex-direction: column;
     gap: 2.25rem;
   }
+  /* prose keeps a readable measure even as the container grows */
+  header, .notice, .addr, .last, footer { max-width: 46rem; }
 
   header { display: flex; flex-direction: column; gap: .9rem; }
   .eyebrow {
@@ -150,10 +152,17 @@
     padding: .1em .35em; border-radius: 3px; word-break: break-all;
   }
 
-  figure {
-    margin: 0;
-    align-self: center;
-    width: min(60rem, calc(100vw - 3rem));
+  figure { margin: 0; min-width: 0; }
+
+  /* wide screens: instructions beside their screenshot instead of above it */
+  @media (min-width: 64rem) {
+    .block {
+      display: grid;
+      grid-template-columns: minmax(14rem, 20rem) minmax(0, 1fr);
+      gap: 2rem;
+    }
+    figure { align-self: start; }
+    ol.steps { position: sticky; top: 2rem; }
   }
   figure img {
     display: block; width: 100%; height: auto;
