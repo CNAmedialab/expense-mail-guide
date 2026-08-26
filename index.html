@@ -57,8 +57,8 @@
 
   * { box-sizing: border-box; }
   /* root size drives the whole rem scale: type, spacing and column width together */
-  html { font-size: 17.5px; }
-  @media (max-width: 30rem) { html { font-size: 16.5px; } }
+  html { font-size: 19px; }
+  @media (max-width: 30rem) { html { font-size: 17px; } }
   body {
     margin: 0;
     background: var(--ground);
@@ -69,7 +69,7 @@
     -webkit-text-size-adjust: 100%;
   }
   .wrap {
-    max-width: 82rem;
+    max-width: 76rem;
     margin: 0 auto;
     padding: 2.5rem 1.5rem 4rem;
     display: flex;
@@ -157,7 +157,7 @@
   @media (min-width: 64rem) {
     .block {
       display: grid;
-      grid-template-columns: minmax(14rem, 20rem) minmax(0, 1fr);
+      grid-template-columns: minmax(16rem, 1fr) minmax(0, 40rem);
       gap: 2rem;
     }
     figure { align-self: start; }
