@@ -56,13 +56,16 @@
   }
 
   * { box-sizing: border-box; }
+  /* root size drives the whole rem scale: type, spacing and column width together */
+  html { font-size: 17.5px; }
+  @media (max-width: 30rem) { html { font-size: 16.5px; } }
   body {
     margin: 0;
     background: var(--ground);
     color: var(--ink);
     font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.75;
+    font-size: 1rem;
+    line-height: 1.8;
     -webkit-text-size-adjust: 100%;
   }
   .wrap {
